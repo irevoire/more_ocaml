@@ -16,8 +16,9 @@ let rec ldrop (Cons (h, tf) as ll) n =
         | _ -> ldrop (tf ()) (n - 1)
 
 (* Question 1 *)
-
 let rec _lpow2 n = Cons (n, fun () -> _lpow2 (n * 2)) 
 
 let l_pow2 = _lpow2 1
 
+(* Question 2 *)
+let nth l n = lhd (ldrop l n)
