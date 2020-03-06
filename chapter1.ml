@@ -11,4 +11,7 @@ let rec _update_budget budget expenses =
 let length l = List.fold_left (fun acc _el -> acc + 1) 0 l
 
 (* Question 3 *)
-let last l = List.fold_left (fun _acc el -> Some(el)) None l;;
+let last l = List.fold_left (fun _acc el -> Some(el)) None l
+
+(* Question 4 *)
+let reverse l = List.fold_left (fun acc el -> el::acc) [] l;;
