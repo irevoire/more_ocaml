@@ -37,3 +37,10 @@ let rec repeat l =
 let rec _fibo a b = Cons (a, fun () -> _fibo b (a + b)) 
 
 let fibo = _fibo 0 1
+
+(* Question 5 *)
+let rec one_on_two (Cons (head, tail)) =
+        let Cons (_, tail) = tail () in
+        Cons (head, fun () -> one_on_two (tail ()))
+
+let unleave l = (one_on_two l, one_on_two (ldrop l 1))
