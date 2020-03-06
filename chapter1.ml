@@ -21,3 +21,19 @@ let mem base l = List.fold_left (fun acc el -> acc || el == base) false l
 
 (* Question 6 *)
 let join l = List.fold_left (fun acc el -> if acc = "" then el else acc ^ " " ^ el) "" l
+
+(* Question 7 *)
+type 'a tree =
+        Lf
+        | Br of 'a  * 'a tree * 'a tree
+
+let rec fold_tree f e t =
+        match t with
+        Lf ->  e
+        | Br (x, l, r) -> f x (fold_tree f e l) (fold_tree f e r)
+
+let example_tree = Br (1, Br (0, Lf, Lf), Br (6, Br (4, Lf, Lf), Lf))
+
+let max a b = if a > b then a else b
+
+let depth tree = fold_tree (fun _el left right -> 1 + max left right) 0 tree
