@@ -37,3 +37,6 @@ let example_tree = Br (1, Br (0, Lf, Lf), Br (6, Br (4, Lf, Lf), Lf))
 let max a b = if a > b then a else b
 
 let depth tree = fold_tree (fun _el left right -> 1 + max left right) 0 tree
+
+(* Question 8 *)
+(* NO *)
