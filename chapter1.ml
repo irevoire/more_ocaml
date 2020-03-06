@@ -14,4 +14,7 @@ let length l = List.fold_left (fun acc _el -> acc + 1) 0 l
 let last l = List.fold_left (fun _acc el -> Some(el)) None l
 
 (* Question 4 *)
-let reverse l = List.fold_left (fun acc el -> el::acc) [] l;;
+let reverse l = List.fold_left (fun acc el -> el::acc) [] l
+
+(* Question 5 *)
+let mem base l = List.fold_left (fun acc el -> acc || el == base) false l
