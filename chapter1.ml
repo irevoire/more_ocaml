@@ -18,3 +18,7 @@ let reverse l = List.fold_left (fun acc el -> el::acc) [] l
 
 (* Question 5 *)
 let mem base l = List.fold_left (fun acc el -> acc || el == base) false l
+
+(* Question 6: how can I merge string other than with concat?
+ * Why use fold when concat already do everything *)
+let join l = String.concat " " l
