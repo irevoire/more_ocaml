@@ -22,3 +22,14 @@ let l_pow2 = _lpow2 1
 
 (* Question 2 *)
 let nth l n = lhd (ldrop l n)
+
+(* Question 3 *)
+exception Fuck
+
+let rec repeat l =
+        match l with
+        [] -> raise Fuck
+        | head :: tail -> Cons (head, fun () -> repeat (tail @ [head]))
+(* !! this is totally ineficient !! *)
+(* I should use an accumulator instead of doing all these concatenation *)
+        
