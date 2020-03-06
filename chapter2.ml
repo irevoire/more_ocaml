@@ -33,3 +33,7 @@ let rec repeat l =
 (* !! this is totally ineficient !! *)
 (* I should use an accumulator instead of doing all these concatenation *)
         
+(* Question 4 *)
+let rec _fibo a b = Cons (a, fun () -> _fibo b (a + b)) 
+
+let fibo = _fibo 0 1
